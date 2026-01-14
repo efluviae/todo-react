@@ -1,4 +1,5 @@
-import React from "react";
+import CompleteButton from "./CompleteButton.jsx";
+import RemoveButton from "./RemoveButton.jsx";
 
 const Todo = ({ todo, removeTodo, completeTodo }) => {
   return (
@@ -11,12 +12,8 @@ const Todo = ({ todo, removeTodo, completeTodo }) => {
         <p className="category">({todo.category})</p>
       </div>
       <div className="actions">
-        <button className="complete" onClick={() => completeTodo(todo.id)}>
-          Completar
-        </button>
-        <button className="remove" onClick={() => removeTodo(todo.id)}>
-          X
-        </button>
+        <CompleteButton todo={todo} completeTodo={completeTodo} />
+        <RemoveButton todo={todo} removeTodo={removeTodo} />
       </div>
     </div>
   );
