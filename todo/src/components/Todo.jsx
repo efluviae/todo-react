@@ -1,5 +1,4 @@
-import CompleteButton from "./CompleteButton.jsx";
-import RemoveButton from "./RemoveButton.jsx";
+import Actions from "./Actions.jsx";
 
 const Todo = ({ todo, removeTodo, completeTodo }) => {
   return (
@@ -11,10 +10,11 @@ const Todo = ({ todo, removeTodo, completeTodo }) => {
         <p>{todo.text}</p>
         <p className="category">({todo.category})</p>
       </div>
-      <div className="actions">
-        <CompleteButton todo={todo} completeTodo={completeTodo} />
-        <RemoveButton todo={todo} removeTodo={removeTodo} />
-      </div>
+      <Actions
+        todo={todo}
+        removeTodo={removeTodo}
+        completeTodo={completeTodo}
+      />
     </div>
   );
 };
