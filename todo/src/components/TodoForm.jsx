@@ -1,15 +1,15 @@
 import { useState } from "react";
 
 const TodoForm = ({ addTodo }) => {
-  const [value, setValue] = useState("");
+  const [text, setText] = useState("");
   const [category, setCategory] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!value || !category) return;
+    if (!text || !category) return;
 
-    addTodo(value, category);
-    setValue("");
+    addTodo(text, category);
+    setText("");
     setCategory("");
   };
 
@@ -21,9 +21,9 @@ const TodoForm = ({ addTodo }) => {
           type="text"
           placeholder="Descrição da tarefa"
           onChange={(e) => {
-            setValue(e.target.value);
+            setText(e.target.value);
           }}
-          value={value}
+          value={text}
         />
         <select
           onChange={(e) => {
