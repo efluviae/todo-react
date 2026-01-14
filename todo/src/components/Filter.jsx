@@ -1,3 +1,5 @@
+import "./Filter.css";
+
 const Filter = ({ filter, setFilter, setSort }) => {
   return (
     <div className="filter">

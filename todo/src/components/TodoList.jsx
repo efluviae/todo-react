@@ -1,4 +1,5 @@
-import TodoCard from "./TodoCard.jsx";
+import TodoCard from "./TodoCard/TodoCard.jsx";
+import "./TodoList.css";
 
 const TodoList = ({
   todos,

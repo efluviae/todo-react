@@ -1,4 +1,5 @@
 import Actions from "./Actions.jsx";
+import "./TodoCard.css";
 
 const Todo = ({ todo, removeTodo, completeTodo }) => {
   return (

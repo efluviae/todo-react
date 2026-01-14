@@ -7,48 +7,9 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.todo-form {
-  padding-bottom: 24px;
-}
-
-.actions__complete {
-  background-color: #5cb85c;
-}
-
-.actions__remove {
-  background-color: #d9534f;
-}
-
-.todo-list {
+.divider {
+  width: 100%;
+  height: 1px;
+  background: #555;
   margin-bottom: 20px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #555;
-}
-
-.todo-list__card {
-  background: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.filter,
-.search {
-  border-bottom: 1px solid #555;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-}
-
-.filter__content {
-  display: flex;
-  justify-content: space-between;
-  gap: 3rem;
-}
-
-.filter__content div {
-  flex: 1 1 0;
 }

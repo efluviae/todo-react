@@ -1,0 +1,18 @@
+.actions__complete {
+  background-color: #5cb85c;
+}
+
+.actions__remove {
+  background-color: #d9534f;
+}
+
+.todo-list__card {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

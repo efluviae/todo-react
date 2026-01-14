@@ -66,12 +66,14 @@ function App() {
     <div className="app">
       <h1 className="app__title">Lista de Tarefas</h1>
       <Search search={search} setSearch={setSearch} />
+      <div className="divider"></div>
       <Filter
         filter={filter}
         setFilter={setFilter}
         sort={sort}
         setSort={setSort}
       />
+      <div className="divider"></div>
       <TodoList
         todos={todos}
         filter={filter}
