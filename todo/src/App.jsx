@@ -1,8 +1,8 @@
 import { useState } from "react";
-import Todo from "./components/Todo.jsx";
 import TodoForm from "./components/TodoForm.jsx";
 import Search from "./components/Search.jsx";
 import Filter from "./components/Filter.jsx";
+import TodoList from "./components/TodoList.jsx";
 import "./App.css";
 
 function App() {
@@ -71,32 +71,14 @@ function App() {
         sort={sort}
         setSort={setSort}
       />
-      <div className="todo-list">
-        {todos
-          .filter((todo) =>
-            filter === "all"
-              ? true
-              : filter === "completed"
-              ? todo.isCompleted
-              : !todo.isCompleted
-          )
-          .filter((todo) =>
-            todo.text.toLowerCase().includes(search.toLowerCase())
-          )
-          .sort((a, b) =>
-            sort === "Asc"
-              ? a.text.localeCompare(b.text)
-              : b.text.localeCompare(a.text)
-          )
-          .map((todo) => (
-            <Todo
-              key={todo.id}
-              todo={todo}
-              removeTodo={removeTodo}
-              completeTodo={completeTodo}
-            />
-          ))}
-      </div>
+      <TodoList
+        todos={todos}
+        filter={filter}
+        search={search}
+        sort={sort}
+        removeTodo={removeTodo}
+        completeTodo={completeTodo}
+      />
       <TodoForm addTodo={addTodo} />
     </div>
   );
