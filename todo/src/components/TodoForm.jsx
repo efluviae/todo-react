@@ -14,10 +14,11 @@ const TodoForm = ({ addTodo }) => {
   };
 
   return (
-    <div className="todo-form">
-      <h2>Adicionar Nova Tarefa</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="add-task">
+      <h2 className="add-task__title">Adicionar Nova Tarefa</h2>
+      <form className="add-task__form" onSubmit={handleSubmit}>
         <input
+          className="add-task__input"
           type="text"
           placeholder="Descrição da tarefa"
           onChange={(e) => {
@@ -26,6 +27,7 @@ const TodoForm = ({ addTodo }) => {
           value={text}
         />
         <select
+          className="add-task__select"
           onChange={(e) => {
             setCategory(e.target.value);
           }}
@@ -36,7 +38,9 @@ const TodoForm = ({ addTodo }) => {
           <option value="Pessoal">Pessoal</option>
           <option value="Estudos">Estudos</option>
         </select>
-        <button type="submit">Criar Tarefa</button>
+        <button type="submit" className="add-task__submit">
+          Criar Tarefa
+        </button>
       </form>
     </div>
   );

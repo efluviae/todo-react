@@ -1,6 +1,9 @@
 const CompleteButton = ({ todo, completeTodo }) => {
   return (
-    <button className="complete" onClick={() => completeTodo(todo.id)}>
+    <button
+      className="actions__complete btn"
+      onClick={() => completeTodo(todo.id)}
+    >
       Completar
     </button>
   );

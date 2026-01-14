@@ -1,8 +1,9 @@
 const Search = ({ search, setSearch }) => {
   return (
     <div className="search">
-      <h2>Pesquisar Tarefas</h2>
+      <h2 className="search__title">Pesquisar Tarefas</h2>
       <input
+        className="search__input"
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}

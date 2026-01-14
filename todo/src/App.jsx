@@ -4,6 +4,7 @@ import Search from "./components/Search.jsx";
 import Filter from "./components/Filter.jsx";
 import TodoList from "./components/TodoList.jsx";
 import "./App.css";
+import "./index.css";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -63,7 +64,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Lista de Tarefas</h1>
+      <h1 className="app__title">Lista de Tarefas</h1>
       <Search search={search} setSearch={setSearch} />
       <Filter
         filter={filter}
