@@ -8,6 +8,10 @@ const TodoList = ({
   sort,
   removeTodo,
   completeTodo,
+  categoryFilter,
+  setCategoryFilter,
+  urgentFilter,
+  setUrgentFilter,
 }) => {
   const filteredTodos = todos
     .filter((todo) =>
@@ -18,6 +22,12 @@ const TodoList = ({
         : !todo.isCompleted
     )
     .filter((todo) => todo.text.toLowerCase().includes(search.toLowerCase()))
+    .filter((todo) =>
+      categoryFilter === "all"
+        ? true
+        : todo.category.toLowerCase() === categoryFilter
+    )
+    .filter((todo) => !urgentFilter || todo.isUrgent)
     .sort((a, b) =>
       sort === "Asc"
         ? a.text.localeCompare(b.text)
@@ -34,6 +44,8 @@ const TodoList = ({
               todo={todo}
               removeTodo={removeTodo}
               completeTodo={completeTodo}
+              setCategoryFilter={setCategoryFilter}
+              setUrgentFilter={setUrgentFilter}
             />
           ))}
     </div>

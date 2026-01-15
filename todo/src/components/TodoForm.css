@@ -1,0 +1,26 @@
+.add-task__form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-task__input,
+.add-task__select {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1em;
+}
+
+.add-task__urgent {
+  display: flex;
+  align-items: center;
+}
+
+.add-task__urgent__label {
+  padding: 8px 0;
+}
+
+.add-task__urgent__checkbox {
+  margin-right: 6px;
+}

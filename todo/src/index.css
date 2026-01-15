@@ -1,9 +1,9 @@
 * {
+  font-family: "Sour Gummy", sans-serif;
   box-sizing: border-box;
 }
 
 body {
-  font-family: "Sour Gummy", sans-serif;
   background: hsl(246, 74%, 85%);
   padding: 30px;
   color: #333;
@@ -37,16 +37,7 @@ button:hover {
   opacity: 1;
 }
 
-input,
-select {
-  padding: 5px;
-  margin-bottom: 10px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  width: 100%;
-}
-
-.complete__checkbox {
+.checkbox {
   cursor: pointer;
   appearance: none;
   margin: 0;
@@ -61,7 +52,7 @@ select {
   place-content: center;
 }
 
-.complete__checkbox::before {
+.checkbox::before {
   content: "";
   width: 0.65em;
   height: 0.65em;
@@ -72,11 +63,11 @@ select {
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 
-.complete__checkbox:checked::before {
+.checkbox:checked::before {
   transform: scale(1);
 }
 
-.complete__checkbox .complete__label {
+.checkbox .label {
   padding: 20px;
   background-image: url(./assets/checkbox-unchecked.svg) no-repeat left center;
 }

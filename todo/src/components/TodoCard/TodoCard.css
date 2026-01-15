@@ -42,10 +42,17 @@
   gap: 10px;
 }
 
-.todo-list__card__category {
+.todo-list__card__category,
+.todo-list__card__urgent {
+  cursor: pointer;
   font-size: 0.8em;
   padding: 3px 8px;
   border-radius: 5px;
+}
+
+.todo-list__card__urgent {
+  background-color: hsl(0, 74%, 85%);
+  color: hsl(0, 43%, 46%);
 }
 
 .category--trabalho {

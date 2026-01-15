@@ -1,16 +1,19 @@
 import { useState } from "react";
+import "./TodoForm.css";
 
 const TodoForm = ({ addTodo }) => {
   const [text, setText] = useState("");
   const [category, setCategory] = useState("");
+  const [isUrgent, setIsUrgent] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!text || !category) return;
 
-    addTodo(text, category);
+    addTodo(text, category, isUrgent);
     setText("");
     setCategory("");
+    setIsUrgent(false);
   };
 
   return (
@@ -38,6 +41,23 @@ const TodoForm = ({ addTodo }) => {
           <option value="Pessoal">Pessoal</option>
           <option value="Estudos">Estudos</option>
         </select>
+        <div className="add-task__urgent">
+          <label
+            htmlFor="add-task__urgent"
+            className="add-task__urgent__label label"
+          >
+            <input
+              type="checkbox"
+              id="add-task__urgent"
+              className="add-task__urgent__checkbox checkbox"
+              onChange={() => {
+                setIsUrgent(!isUrgent);
+              }}
+              checked={isUrgent}
+            />
+          </label>
+          <p>Urgente</p>
+        </div>
         <button type="submit" className="add-task__submit">
           Criar Tarefa
         </button>
