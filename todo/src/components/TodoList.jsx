@@ -35,10 +35,14 @@ const TodoList = ({
     );
 
   return (
-    <div className="todo-list">
-      {filteredTodos.length === 0
-        ? "Nenhuma tarefa encontrada"
-        : filteredTodos.map((todo) => (
+    <>
+      <div className="todo-list">
+        {filteredTodos.length === 0 ? (
+          <>
+            <p className="txt-center">Nenhuma tarefa encontrada</p>
+          </>
+        ) : (
+          filteredTodos.map((todo) => (
             <TodoCard
               key={todo.id}
               todo={todo}
@@ -47,8 +51,10 @@ const TodoList = ({
               setCategoryFilter={setCategoryFilter}
               setUrgentFilter={setUrgentFilter}
             />
-          ))}
-    </div>
+          ))
+        )}
+      </div>
+    </>
   );
 };
 

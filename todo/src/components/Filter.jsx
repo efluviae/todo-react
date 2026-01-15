@@ -11,10 +11,10 @@ const Filter = ({
 }) => {
   return (
     <div className="filter">
-      <h2 className="filter__title">Filtrar:</h2>
+      <h2 className="filter__title">Filtrar</h2>
       <div className="filter__content">
         <div className="filter__status">
-          <p className="filter__status__label">Status:</p>
+          <h3 className="filter__status__label">Status:</h3>
           <select
             className="filter__status__select"
             value={filter}
@@ -26,7 +26,7 @@ const Filter = ({
           </select>
         </div>
         <div className="filter__category">
-          <p>Categoria</p>
+          <h3>Categoria:</h3>
           <select
             className="filter__category__select"
             value={categoryFilter}
@@ -39,7 +39,7 @@ const Filter = ({
           </select>
         </div>
         <div className="filter__urgent">
-          <p>Urgente</p>
+          <h3>Urgente:</h3>
           <input
             className=" filter__urgent__checkbox checkbox"
             type="checkbox"
@@ -48,7 +48,7 @@ const Filter = ({
           />
         </div>
         <div className="filter__sort">
-          <p className="filter__sort__label">Ordem alfabética</p>
+          <h3 className="filter__sort__label">Ordenar:</h3>
           <button
             className="filter__sort__btn btn"
             onClick={() => setSort("Asc")}

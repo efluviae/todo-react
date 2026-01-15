@@ -1,5 +1,4 @@
 import { useState } from "react";
-import TodoForm from "./components/TodoForm.jsx";
 import Search from "./components/Search.jsx";
 import Filter from "./components/Filter.jsx";
 import TodoList from "./components/TodoList.jsx";
@@ -69,7 +68,7 @@ function App() {
   return (
     <div className="app">
       <h1 className="app__title">Lista de Tarefas</h1>
-      <Search search={search} setSearch={setSearch} />
+      <Search search={search} setSearch={setSearch} addTodo={addTodo} />
       <div className="divider"></div>
       <Filter
         filter={filter}
@@ -81,7 +80,6 @@ function App() {
         urgentFilter={urgentFilter}
         setUrgentFilter={setUrgentFilter}
       />
-      <div className="divider"></div>
       <TodoList
         todos={todos}
         filter={filter}
@@ -94,7 +92,6 @@ function App() {
         removeTodo={removeTodo}
         completeTodo={completeTodo}
       />
-      <TodoForm addTodo={addTodo} />
     </div>
   );
 }
