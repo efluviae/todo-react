@@ -1,8 +1,13 @@
 const RemoveButton = ({ todo, removeTodo }) => {
   return (
-    <button className="actions__remove btn" onClick={() => removeTodo(todo.id)}>
-      X
-    </button>
+    <div className="remove">
+      <img
+        onClick={() => removeTodo(todo.id)}
+        className="remove__trash-icon"
+        src="/src/assets/trash.svg"
+        alt="Remove Todo"
+      />
+    </div>
   );
 };
 

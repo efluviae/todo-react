@@ -1,11 +1,15 @@
+import "../../index.css";
+
 const CompleteButton = ({ todo, completeTodo }) => {
   return (
-    <button
-      className="actions__complete btn"
-      onClick={() => completeTodo(todo.id)}
-    >
-      Completar
-    </button>
+    <label className="complete__label">
+      <input
+        className="complete__checkbox"
+        type="checkbox"
+        checked={todo.isCompleted}
+        onChange={() => completeTodo(todo.id)}
+      />
+    </label>
   );
 };
 

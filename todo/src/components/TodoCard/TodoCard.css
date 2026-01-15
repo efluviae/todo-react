@@ -2,11 +2,25 @@
   background-color: #5cb85c;
 }
 
-.actions__remove {
-  background-color: #d9534f;
+.remove {
+  padding: 10px;
 }
 
-.todo-list__card {
+.remove__trash-icon {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  filter: invert(34%) sepia(37%) saturate(3739%) hue-rotate(320deg)
+    brightness(96%) contrast(95%);
+  transition: 200ms opacity ease-in-out;
+}
+
+.remove__trash-icon:hover {
+  opacity: 0.5;
+}
+
+.todo-list__card,
+.todo-list__card--completed {
   background: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
@@ -15,4 +29,36 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.todo-list__card--completed {
+  opacity: 0.6;
+  text-decoration: line-through;
+}
+
+.todo-list__card__content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-list__card__category {
+  font-size: 0.8em;
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.category--trabalho {
+  background-color: hsl(246, 74%, 85%);
+  color: hsl(246, 43%, 46%);
+}
+
+.category--estudos {
+  background-color: hsl(120, 73%, 75%);
+  color: hsl(120, 48%, 36%);
+}
+
+.category--pessoal {
+  background-color: hsl(39, 100%, 85%);
+  color: hsl(39, 61%, 44%);
 }
