@@ -18,14 +18,9 @@ const Filter = ({
 
   return (
     <div className="filter">
-      <div className="filter__header">
-        <div
-          className={`chevron-${isOpen ? "down" : "right"}`}
-          onClick={toggleOpen}
-        ></div>
-        <h2 className="filter__title" onClick={toggleOpen}>
-          Filtrar
-        </h2>
+      <div className="filter__header" onClick={toggleOpen}>
+        <div className={`chevron-${isOpen ? "down" : "right"}`}></div>
+        <h2 className="filter__title">Filtrar</h2>
       </div>
       <div className="filter__content">
         {isOpen && (

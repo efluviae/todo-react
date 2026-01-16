@@ -15,6 +15,9 @@ const Todo = ({
       <div className="todo-list__card__content">
         <CompleteButton todo={todo} completeTodo={completeTodo} />
         <p className="todo-list__card__text">{todo.text}</p>
+        <RemoveButton todo={todo} removeTodo={removeTodo} />
+      </div>
+      <div className="todo-list__card__flags">
         <p
           className={`todo-list__card__category category--${todo.category.toLowerCase()}`}
           onClick={() => {
@@ -34,7 +37,6 @@ const Todo = ({
           </p>
         )}
       </div>
-      <RemoveButton todo={todo} removeTodo={removeTodo} />
     </div>
   );
 };

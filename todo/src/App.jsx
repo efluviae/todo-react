@@ -80,6 +80,7 @@ function App() {
         urgentFilter={urgentFilter}
         setUrgentFilter={setUrgentFilter}
       />
+      <div className="divider"></div>
       <TodoList
         todos={todos}
         filter={filter}

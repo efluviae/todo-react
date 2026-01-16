@@ -58,3 +58,11 @@
     width: 75%;
   }
 }
+
+/* Desktop Styles 1200px */
+
+@media (min-width: 1200px) {
+  .add-popup {
+    width: 45%;
+  }
+}
