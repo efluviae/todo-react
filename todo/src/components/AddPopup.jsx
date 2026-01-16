@@ -21,7 +21,7 @@ const AddPopup = ({ addTodo, toggleAddPopup }) => {
   return (
     <>
       <div className="overlay" onClick={toggleAddPopup}></div>
-      <div className="add-popup__content">
+      <div className="add-popup">
         <div className="add-popup__header">
           <h2 className="add-popup__title">Adicionar tarefa</h2>
           <div className="close-icon" onClick={toggleAddPopup}></div>
@@ -31,7 +31,7 @@ const AddPopup = ({ addTodo, toggleAddPopup }) => {
             <input
               className="add-popup__input input"
               type="text"
-              placeholder="Descrição da tarefa"
+              placeholder="Descrição da tarefa..."
               onChange={(e) => {
                 setText(e.target.value);
               }}
@@ -51,13 +51,13 @@ const AddPopup = ({ addTodo, toggleAddPopup }) => {
             </select>
             <div className="add-popup__urgent">
               <label
-                htmlFor="add-task__urgent"
-                className="add-task__urgent__label label"
+                htmlFor="add-popup__urgent"
+                className="add-popup__urgent__label label"
               >
                 <input
                   type="checkbox"
                   id="add-popup__urgent"
-                  className="add-task__urgent__checkbox checkbox"
+                  className="add-popup__urgent__checkbox checkbox"
                   onChange={() => {
                     setIsUrgent(!isUrgent);
                   }}
