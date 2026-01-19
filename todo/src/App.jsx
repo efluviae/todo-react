@@ -1,41 +1,37 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Search from "./components/Search.jsx";
 import Filter from "./components/Filter.jsx";
 import TodoList from "./components/TodoList.jsx";
 import AddCategoryPopup from "./components/AddCategoryPopup.jsx";
+import ThemeSelector from "./components/ThemeSelector/ThemeSelector.jsx";
+import { getItem, setItem } from "./utils/localStorage.jsx";
 import "./App.css";
 import "./index.css";
-import ThemeSelector from "./components/ThemeSelector/ThemeSelector.jsx";
 
 function App() {
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: "Criar funcionalidade x no sistema",
-      category: "Trabalho",
-      isCompleted: false,
-    },
-    {
-      id: 2,
-      text: "Ir pra academia",
-      category: "Pessoal",
-      isCompleted: false,
-    },
-    {
-      id: 3,
-      text: "Estudar React",
-      category: "Estudos",
-      isCompleted: false,
-    },
-  ]);
-
+  const [todos, setTodos] = useState(() => {
+    const item = getItem("TODOS");
+    return item || [];
+  });
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState("all");
   const [sort, setSort] = useState("Asc");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [urgentFilter, setUrgentFilter] = useState(false);
-  const [customCategories, setCustomCategories] = useState([]);
+  const [customCategories, setCustomCategories] = useState(() => {
+    const item = getItem("CUSTOM_CATEGORIES");
+    return item || [];
+  });
   const [isAddCategoryPopupOpen, setIsAddCategoryPopupOpen] = useState(false);
+
+  /* get items from localStorage */
+  useEffect(() => {
+    setItem("CUSTOM_CATEGORIES", customCategories);
+  }, [customCategories]);
+
+  useEffect(() => {
+    setItem("TODOS", todos);
+  }, [todos]);
 
   const addTodo = (text, category, isUrgent) => {
     const newTodos = [
