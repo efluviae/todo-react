@@ -12,26 +12,27 @@ const TodoList = ({
   setCategoryFilter,
   urgentFilter,
   setUrgentFilter,
+  customCategories,
 }) => {
   const filteredTodos = todos
     .filter((todo) =>
       filter === "all"
         ? true
         : filter === "completed"
-        ? todo.isCompleted
-        : !todo.isCompleted
+          ? todo.isCompleted
+          : !todo.isCompleted,
     )
     .filter((todo) => todo.text.toLowerCase().includes(search.toLowerCase()))
     .filter((todo) =>
       categoryFilter === "all"
         ? true
-        : todo.category.toLowerCase() === categoryFilter
+        : todo.category.toLowerCase() === categoryFilter,
     )
     .filter((todo) => !urgentFilter || todo.isUrgent)
     .sort((a, b) =>
       sort === "Asc"
         ? a.text.localeCompare(b.text)
-        : b.text.localeCompare(a.text)
+        : b.text.localeCompare(a.text),
     );
 
   return (
@@ -50,6 +51,7 @@ const TodoList = ({
               completeTodo={completeTodo}
               setCategoryFilter={setCategoryFilter}
               setUrgentFilter={setUrgentFilter}
+              customCategories={customCategories}
             />
           ))
         )}

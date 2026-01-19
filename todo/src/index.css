@@ -1,11 +1,118 @@
+[data-theme="purple"] {
+  --bg: #ebdfff;
+  --desktop-bg: #c2bcf5;
+  --font: #6e50a5;
+  --btn: #413374;
+  --detail: #beabdd;
+  --card: white;
+  --urgent-label-bg: #f5bcbc;
+  --urgent-label-font: #a84343;
+  --purple-label-bg: #c2bcf5;
+  --purple-label-font: #4d43a8;
+  --green-label-bg: #91ee91;
+  --green-label-font: #308830;
+  --yellow-label-bg: #f7ffb3;
+  --yellow-label-font: #b5ac2c;
+  --orange-label-bg: #ffd8b1;
+  --orange-label-font: #b36a2c;
+  --blue-label-bg: #b3d4ff;
+  --blue-label-font: #2c6ab5;
+  --pink-label-bg: #ffdff5;
+  --pink-label-font: #a55082;
+  --trash-bg: invert(34%) sepia(37%) saturate(3739%) hue-rotate(320deg)
+    brightness(96%) contrast(95%);
+}
+
+[data-theme="pink"] {
+  --bg: #ffdff5;
+  --desktop-bg: #f5bce4;
+  --font: #a55082;
+  --btn: #743354;
+  --detail: #ddabc0;
+  --card: white;
+  --urgent-label-bg: #f5bcbc;
+  --urgent-label-font: #a84343;
+  --purple-label-bg: #c2bcf5;
+  --purple-label-font: #4d43a8;
+  --green-label-bg: #91ee91;
+  --green-label-font: #308830;
+  --yellow-label-bg: #f7ffb3;
+  --yellow-label-font: #b5ac2c;
+  --orange-label-bg: #ffd8b1;
+  --orange-label-font: #b36a2c;
+  --blue-label-bg: #b3d4ff;
+  --blue-label-font: #2c6ab5;
+  --pink-label-bg: #ffdff5;
+  --pink-label-font: #a55082;
+  --trash-bg: invert(34%) sepia(37%) saturate(3739%) hue-rotate(320deg)
+    brightness(96%) contrast(95%);
+}
+
+[data-theme="green"] {
+  --bg: #def3c5;
+  --desktop-bg: #b3d49d;
+  --font: #79a550;
+  --btn: #537025;
+  --detail: #c2db90;
+  --card: white;
+  --urgent-label-bg: #f5bcbc;
+  --urgent-label-font: #a84343;
+  --purple-label-bg: #c2bcf5;
+  --purple-label-font: #4d43a8;
+  --green-label-bg: #91ee91;
+  --green-label-font: #308830;
+  --yellow-label-bg: #f7ffb3;
+  --yellow-label-font: #b5ac2c;
+  --orange-label-bg: #ffd8b1;
+  --orange-label-font: #b36a2c;
+  --blue-label-bg: #b3d4ff;
+  --blue-label-font: #2c6ab5;
+  --pink-label-bg: #ffdff5;
+  --pink-label-font: #a55082;
+  --trash-bg: invert(34%) sepia(37%) saturate(3739%) hue-rotate(320deg)
+    brightness(96%) contrast(95%);
+}
+
+[data-theme="dark"] {
+  --bg: #51556b;
+  --desktop-bg: #282a36;
+  --font: white;
+  --btn: #282a36;
+  --detail: #3f4253;
+  --card: #717694;
+  --urgent-label-bg: #ff5555;
+  --urgent-label-font: #681a1a;
+  --purple-label-bg: #bd93f9;
+  --purple-label-font: #623a99;
+  --green-label-bg: #50fa7b;
+  --green-label-font: #237e3a;
+  --yellow-label-bg: #f1fa8c;
+  --yellow-label-font: #757a37;
+  --orange-label-bg: #ffb86c;
+  --orange-label-font: #6b451c;
+  --blue-label-bg: #8be9fd;
+  --blue-label-font: #295d69;
+  --pink-label-bg: #ff79c6;
+  --pink-label-font: #7c2b59;
+  --trash-bg: invert(5%) sepia(4%) saturate(4421%) hue-rotate(188deg)
+    brightness(98%) contrast(92%);
+}
+
 * {
   font-family: "Sour Gummy", sans-serif;
   box-sizing: border-box;
 }
 
 body {
-  background: #ebdfff;
-  color: #6e50a5;
+  background: var(--bg);
+  color: var(--font);
+  transition: 200ms ease-in-out;
+}
+
+select {
+  color: var(--font);
+  background-color: var(--card);
+  width: 95px;
 }
 
 @layer helper {
@@ -20,7 +127,7 @@ body {
   .divider {
     width: 100%;
     height: 4px;
-    background: #beabdd;
+    background: var(--detail);
     margin: 20px 0;
     border-radius: 3px;
   }
@@ -45,11 +152,10 @@ body {
 @layer button {
   button {
     cursor: pointer;
-    background-color: #413374;
+    background-color: var(--btn);
     color: white;
     border: none;
     padding: 3px 10px;
-    margin-right: 10px;
     border-radius: 3px;
     opacity: 0.8;
     transition: 300ms opacity ease-in-out;
@@ -66,8 +172,8 @@ body {
     appearance: none;
     margin: 0;
     font: inherit;
-    background-color: white;
-    color: hsl(246, 74%, 85%);
+    background-color: var(--card);
+    color: var(--detail);
     width: 1.15em;
     height: 1.15em;
     border: 0.15em solid currentColor;
@@ -83,7 +189,7 @@ body {
     height: 0.65em;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em #9d82d1;
+    box-shadow: inset 1em 1em var(--detail);
     transform-origin: bottom left;
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   }
@@ -91,10 +197,38 @@ body {
   .checkbox:checked::before {
     transform: scale(1);
   }
+}
 
-  .checkbox .label {
-    padding: 20px;
-    background-image: url(./assets/checkbox-unchecked.svg) no-repeat left center;
+@layer radial-selector {
+  .radial-selector {
+    cursor: pointer;
+    appearance: none;
+    margin: 0;
+    font: inherit;
+    background-color: var(--card);
+    color: var(--detail);
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+
+  .radial-selector::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--detail);
+    transform-origin: bottom left;
+    clip-path: circle(50%);
+  }
+
+  .radial-selector:checked::before {
+    transform: scale(1);
   }
 }
 
@@ -120,7 +254,7 @@ body {
   .close-icon::after {
     content: "";
     position: absolute;
-    background-color: #6e50a5;
+    background-color: var(--font);
   }
 
   /* Vertical bar */
@@ -160,8 +294,8 @@ body {
     content: " ";
     cursor: pointer;
     display: inline-block;
-    border-bottom: 3px solid #6e50a5;
-    border-right: 3px solid #6e50a5;
+    border-bottom: 3px solid var(--font);
+    border-right: 3px solid var(--font);
     height: 10px;
     width: 10px;
   }
@@ -186,19 +320,37 @@ body {
   }
 }
 
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: auto;
+  transform: translate(-50%, -50%);
+  background-color: var(--bg);
+  padding: 16px 20px 30px 20px;
+  border-radius: 8px;
+  z-index: 3;
+}
+
 .input {
   padding: 8px;
-  border: 1px solid #9d82d1;
+  border: 1px solid var(--detail);
   border-radius: 8px;
   font-size: 1em;
   width: 100%;
+  background-color: var(--card);
+}
+
+.input::placeholder {
+  color: var(--font);
 }
 
 /* Tablet Styles 768px */
 
 @media (min-width: 768px) {
   body {
-    background: hsl(246, 74%, 85%);
+    background: var(--desktop-bg);
     padding: 30px;
   }
 }

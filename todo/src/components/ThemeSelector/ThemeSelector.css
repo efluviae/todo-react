@@ -1,0 +1,28 @@
+.circle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 1;
+}
+
+.circle:hover {
+  opacity: 0.7;
+}
+
+.circle--purple {
+  background-color: #8f69d6;
+  border: 1px solid #6b3fb5;
+}
+.circle--pink {
+  background-color: #e987cb;
+  border: 1px solid #d14f9d;
+}
+.circle--green {
+  background-color: #5bc45b;
+  border: 1px solid #3a9d3a;
+}
+.circle--dark {
+  background-color: #3f4253;
+  border: 1px solid #1f202b;
+}

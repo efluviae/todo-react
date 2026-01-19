@@ -6,8 +6,7 @@
   cursor: pointer;
   width: 16px;
   height: 16px;
-  filter: invert(34%) sepia(37%) saturate(3739%) hue-rotate(320deg)
-    brightness(96%) contrast(95%);
+  filter: var(--trash-bg);
   transition: 200ms opacity ease-in-out;
 }
 
@@ -17,7 +16,7 @@
 
 .todo-list__card,
 .todo-list__card--completed {
-  background: #fff;
+  background: var(--card);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   margin-bottom: 10px;
@@ -65,21 +64,51 @@
 }
 
 .todo-list__card__urgent {
-  background-color: hsl(0, 74%, 85%);
-  color: hsl(0, 43%, 46%);
+  background-color: var(--urgent-label-bg);
+  color: var(--urgent-label-font);
 }
 
-.category--trabalho {
-  background-color: hsl(246, 74%, 85%);
-  color: hsl(246, 43%, 46%);
+.todo-list__card__category[data-color="trabalho"] {
+  background-color: var(--purple-label-bg);
+  color: var(--purple-label-font);
 }
 
-.category--estudos {
-  background-color: hsl(120, 73%, 75%);
-  color: hsl(120, 48%, 36%);
+.todo-list__card__category[data-color="estudos"] {
+  background-color: var(--green-label-bg);
+  color: var(--green-label-font);
 }
 
-.category--pessoal {
-  background-color: hsl(39, 100%, 85%);
-  color: hsl(39, 61%, 44%);
+.todo-list__card__category[data-color="pessoal"] {
+  background-color: var(--yellow-label-bg);
+  color: var(--yellow-label-font);
+}
+
+.todo-list__card__category[data-color="purple"] {
+  background-color: var(--purple-label-bg);
+  color: var(--purple-label-font);
+}
+
+.todo-list__card__category[data-color="green"] {
+  background-color: var(--green-label-bg);
+  color: var(--green-label-font);
+}
+
+.todo-list__card__category[data-color="yellow"] {
+  background-color: var(--yellow-label-bg);
+  color: var(--yellow-label-font);
+}
+
+.todo-list__card__category[data-color="orange"] {
+  background-color: var(--orange-label-bg);
+  color: var(--orange-label-font);
+}
+
+.todo-list__card__category[data-color="blue"] {
+  background-color: var(--blue-label-bg);
+  color: var(--blue-label-font);
+}
+
+.todo-list__card__category[data-color="pink"] {
+  background-color: var(--pink-label-bg);
+  color: var(--pink-label-font);
 }

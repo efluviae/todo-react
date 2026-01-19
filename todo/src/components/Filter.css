@@ -13,3 +13,19 @@
   display: flex;
   flex-direction: column;
 }
+
+.filter__category {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.filter__add-category-btn {
+  align-self: flex-start;
+  font-size: 0.9rem;
+  padding: 6px 10px;
+}
+
+.filter__sort__btn {
+  margin-right: 10px;
+}

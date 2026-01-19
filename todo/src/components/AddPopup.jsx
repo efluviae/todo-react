@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./AddPopup.css";
 import "../index.css";
 
-const AddPopup = ({ addTodo, toggleAddPopup }) => {
+const AddPopup = ({ addTodo, toggleAddPopup, customCategories }) => {
   const [text, setText] = useState("");
   const [category, setCategory] = useState("");
   const [isUrgent, setIsUrgent] = useState(false);
@@ -21,7 +21,7 @@ const AddPopup = ({ addTodo, toggleAddPopup }) => {
   return (
     <>
       <div className="overlay" onClick={toggleAddPopup}></div>
-      <div className="add-popup">
+      <div className="add-popup popup">
         <div className="add-popup__header">
           <h2 className="add-popup__title">Adicionar tarefa</h2>
           <div className="close-icon" onClick={toggleAddPopup}></div>
@@ -48,6 +48,11 @@ const AddPopup = ({ addTodo, toggleAddPopup }) => {
               <option value="Trabalho">Trabalho</option>
               <option value="Pessoal">Pessoal</option>
               <option value="Estudos">Estudos</option>
+              {customCategories.map((category) => (
+                <option key={category.id} value={category.name}>
+                  {category.name}
+                </option>
+              ))}
             </select>
             <div className="add-popup__urgent">
               <label

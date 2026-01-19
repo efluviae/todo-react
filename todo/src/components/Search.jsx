@@ -2,7 +2,7 @@ import { useState } from "react";
 import AddPopup from "./AddPopup";
 import "./Search.css";
 
-const Search = ({ search, setSearch, addTodo }) => {
+const Search = ({ search, setSearch, addTodo, customCategories }) => {
   const [addPopup, setAddPopup] = useState(false);
 
   const toggleAddPopup = () => {
@@ -30,7 +30,11 @@ const Search = ({ search, setSearch, addTodo }) => {
         </div>
       </div>
       {addPopup && (
-        <AddPopup toggleAddPopup={toggleAddPopup} addTodo={addTodo} />
+        <AddPopup
+          toggleAddPopup={toggleAddPopup}
+          addTodo={addTodo}
+          customCategories={customCategories}
+        />
       )}
     </>
   );

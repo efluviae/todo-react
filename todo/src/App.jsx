@@ -2,8 +2,10 @@ import { useState } from "react";
 import Search from "./components/Search.jsx";
 import Filter from "./components/Filter.jsx";
 import TodoList from "./components/TodoList.jsx";
+import AddCategoryPopup from "./components/AddCategoryPopup.jsx";
 import "./App.css";
 import "./index.css";
+import ThemeSelector from "./components/ThemeSelector/ThemeSelector.jsx";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -32,6 +34,8 @@ function App() {
   const [sort, setSort] = useState("Asc");
   const [categoryFilter, setCategoryFilter] = useState("all");
   const [urgentFilter, setUrgentFilter] = useState(false);
+  const [customCategories, setCustomCategories] = useState([]);
+  const [isAddCategoryPopupOpen, setIsAddCategoryPopupOpen] = useState(false);
 
   const addTodo = (text, category, isUrgent) => {
     const newTodos = [
@@ -46,13 +50,12 @@ function App() {
     ];
 
     setTodos(newTodos);
-    console.log(isUrgent);
   };
 
   const removeTodo = (id) => {
     const newTodos = [...todos];
     const filteredTodos = newTodos.filter((todo) =>
-      todo.id !== id ? todo : null
+      todo.id !== id ? todo : null,
     );
     setTodos(filteredTodos);
   };
@@ -65,11 +68,29 @@ function App() {
     setTodos(newTodos);
   };
 
+  const addCategory = (category) => {
+    setCustomCategories([...customCategories, category]);
+  };
+
+  const toggleAddCategoryPopup = () => {
+    setIsAddCategoryPopupOpen(!isAddCategoryPopupOpen);
+  };
+
   return (
     <div className="app">
-      <h1 className="app__title">Lista de Tarefas</h1>
-      <Search search={search} setSearch={setSearch} addTodo={addTodo} />
+      <div className="header">
+        <h1 className="header__title">Lista de Tarefas</h1>
+        <ThemeSelector />
+      </div>
+      <Search
+        search={search}
+        setSearch={setSearch}
+        addTodo={addTodo}
+        customCategories={customCategories}
+      />
+
       <div className="divider"></div>
+
       <Filter
         filter={filter}
         setFilter={setFilter}
@@ -79,8 +100,14 @@ function App() {
         setCategoryFilter={setCategoryFilter}
         urgentFilter={urgentFilter}
         setUrgentFilter={setUrgentFilter}
+        customCategories={customCategories}
+        addCategory={addCategory}
+        toggleCategoryPopup={toggleAddCategoryPopup}
+        isAddCategoryPopupOpen={isAddCategoryPopupOpen}
       />
+
       <div className="divider"></div>
+
       <TodoList
         todos={todos}
         filter={filter}
@@ -92,7 +119,15 @@ function App() {
         setUrgentFilter={setUrgentFilter}
         removeTodo={removeTodo}
         completeTodo={completeTodo}
+        customCategories={customCategories}
       />
+      {isAddCategoryPopupOpen && (
+        <AddCategoryPopup
+          addCategory={addCategory}
+          toggleCategoryPopup={toggleAddCategoryPopup}
+          isAddCategoryPopupOpen={isAddCategoryPopupOpen}
+        />
+      )}
     </div>
   );
 }

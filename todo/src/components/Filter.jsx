@@ -9,6 +9,8 @@ const Filter = ({
   categoryFilter,
   urgentFilter,
   setUrgentFilter,
+  customCategories,
+  toggleCategoryPopup,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,11 +47,23 @@ const Filter = ({
                 onChange={(e) => setCategoryFilter(e.target.value)}
               >
                 <option value="all">Todas</option>
-                <option value="trabalho">Trabalho</option>
-                <option value="estudos">Estudos</option>
-                <option value="pessoal">Pessoal</option>
+                <option value="Trabalho">Trabalho</option>
+                <option value="Estudos">Estudos</option>
+                <option value="Pessoal">Pessoal</option>
+                {customCategories.map((category) => (
+                  <option key={category.id} value={category.name}>
+                    {category.name}
+                  </option>
+                ))}
               </select>
+              <button
+                className="filter__add-category-btn btn"
+                onClick={toggleCategoryPopup}
+              >
+                Nova Categoria
+              </button>
             </div>
+            <div className="filter__category"></div>
             <div className="filter__urgent">
               <h3>Urgente:</h3>
               <input

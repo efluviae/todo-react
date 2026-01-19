@@ -9,7 +9,15 @@ const Todo = ({
   completeTodo,
   setCategoryFilter,
   setUrgentFilter,
+  customCategories,
 }) => {
+  const getColorForCategory = () => {
+    const customCategory = customCategories.find(
+      (cat) => cat.name === todo.category,
+    );
+    return customCategory ? customCategory.color : todo.category.toLowerCase();
+  };
+
   return (
     <div className={`todo-list__card${todo.isCompleted ? "--completed" : ""}`}>
       <div className="todo-list__card__content">
@@ -19,7 +27,8 @@ const Todo = ({
       </div>
       <div className="todo-list__card__flags">
         <p
-          className={`todo-list__card__category category--${todo.category.toLowerCase()}`}
+          className="todo-list__card__category"
+          data-color={getColorForCategory()}
           onClick={() => {
             setCategoryFilter(todo.category.toLowerCase());
           }}
