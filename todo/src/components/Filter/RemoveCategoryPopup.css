@@ -1,0 +1,21 @@
+.remove-category-popup__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.remove-category-popup__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.remove-category-popup__select {
+  width: 100%;
+}
+
+.remove-category-popup__submit {
+  padding: 12px;
+  font-size: 1rem;
+}

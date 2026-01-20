@@ -20,7 +20,13 @@
   gap: 8px;
 }
 
-.filter__add-category-btn {
+.filter__manage-category {
+  display: flex;
+  gap: 8px;
+}
+
+.filter__manage-category__add-btn,
+.filter__manage-category__remove-btn {
   align-self: flex-start;
   font-size: 0.9rem;
   padding: 6px 10px;

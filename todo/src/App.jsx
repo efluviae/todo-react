@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import Search from "./components/Search.jsx";
-import Filter from "./components/Filter.jsx";
+import Filter from "./components/Filter/Filter.jsx";
 import TodoList from "./components/TodoList.jsx";
-import AddCategoryPopup from "./components/AddCategoryPopup.jsx";
+import AddCategoryPopup from "./components/Filter/AddCategoryPopup.jsx";
 import ThemeSelector from "./components/ThemeSelector/ThemeSelector.jsx";
 import { getItem, setItem } from "./utils/localStorage.jsx";
 import "./App.css";
@@ -97,6 +97,7 @@ function App() {
         urgentFilter={urgentFilter}
         setUrgentFilter={setUrgentFilter}
         customCategories={customCategories}
+        setCustomCategories={setCustomCategories}
         addCategory={addCategory}
         toggleCategoryPopup={toggleAddCategoryPopup}
         isAddCategoryPopupOpen={isAddCategoryPopupOpen}

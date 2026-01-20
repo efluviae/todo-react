@@ -1,6 +1,6 @@
 import "./AddCategoryPopup.css";
 import { useState } from "react";
-import "../index.css";
+import "../../index.css";
 
 const AVAILABLE_COLORS = [
   { name: "Roxo", value: "purple" },

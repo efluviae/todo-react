@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Filter.css";
+import RemoveCategoryPopup from "./RemoveCategoryPopup";
 
 const Filter = ({
   filter,
@@ -10,22 +11,28 @@ const Filter = ({
   urgentFilter,
   setUrgentFilter,
   customCategories,
+  setCustomCategories,
   toggleCategoryPopup,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isFilterOpen, setIsFilterOpen] = useState(false);
+  const [isRemovePopupOpen, setIsRemovePopupOpen] = useState(false);
 
-  const toggleOpen = () => {
-    setIsOpen(!isOpen);
+  const toggleFilterOpen = () => {
+    setIsFilterOpen(!isFilterOpen);
+  };
+
+  const toggleRemovePopup = () => {
+    setIsRemovePopupOpen(!isRemovePopupOpen);
   };
 
   return (
     <div className="filter">
-      <div className="filter__header" onClick={toggleOpen}>
-        <div className={`chevron-${isOpen ? "down" : "right"}`}></div>
+      <div className="filter__header" onClick={toggleFilterOpen}>
+        <div className={`chevron-${isFilterOpen ? "down" : "right"}`}></div>
         <h2 className="filter__title">Filtrar</h2>
       </div>
       <div className="filter__content">
-        {isOpen && (
+        {isFilterOpen && (
           <>
             <div className="filter__status">
               <h3 className="filter__status__label">Status:</h3>
@@ -56,12 +63,27 @@ const Filter = ({
                   </option>
                 ))}
               </select>
-              <button
-                className="filter__add-category-btn btn"
-                onClick={toggleCategoryPopup}
-              >
-                Nova Categoria
-              </button>
+              <div className="filter__manage-category">
+                <button
+                  className="filter__manage-category__add-btn btn"
+                  onClick={toggleCategoryPopup}
+                >
+                  + Categoria
+                </button>
+                <button
+                  className="filter__manage-category__remove-btn btn"
+                  onClick={toggleRemovePopup}
+                >
+                  - Categoria
+                </button>
+                {isRemovePopupOpen && (
+                  <RemoveCategoryPopup
+                    customCategories={customCategories}
+                    setCustomCategories={setCustomCategories}
+                    toggleRemovePopup={toggleRemovePopup}
+                  />
+                )}
+              </div>
             </div>
             <div className="filter__category"></div>
             <div className="filter__urgent">
