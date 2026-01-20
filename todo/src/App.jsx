@@ -24,7 +24,7 @@ function App() {
   });
   const [isAddCategoryPopupOpen, setIsAddCategoryPopupOpen] = useState(false);
 
-  /* get items from localStorage */
+  /* set items to localStorage */
   useEffect(() => {
     setItem("CUSTOM_CATEGORIES", customCategories);
   }, [customCategories]);

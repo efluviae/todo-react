@@ -19,3 +19,11 @@
   padding: 12px;
   font-size: 1rem;
 }
+
+/* Tablet Styles 768px */
+
+@media (min-width: 768px) {
+  .remove-category-popup {
+    max-width: 550px;
+  }
+}

@@ -27,6 +27,10 @@ const Filter = ({
     setIsRemovePopupOpen(!isRemovePopupOpen);
   };
 
+  isRemovePopupOpen
+    ? document.body.classList.add("no-scroll")
+    : document.body.classList.remove("no-scroll");
+
   return (
     <div className="filter">
       <div className="filter__header" onClick={toggleFilterOpen}>

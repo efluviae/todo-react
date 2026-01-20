@@ -1,7 +1,7 @@
-import "./ThemeSelector.css";
-import "../../index.css";
 import ThemePopup from "./ThemePopup";
 import { useState } from "react";
+import "./ThemeSelector.css";
+import "../../index.css";
 
 const ThemeSelector = () => {
   const [isThemePopupOpen, setIsThemePopupOpen] = useState(false);
