@@ -3,6 +3,8 @@ import "./Filter.css";
 import RemoveCategoryPopup from "./RemoveCategoryPopup";
 
 const Filter = ({
+  todos,
+  setTodos,
   filter,
   setFilter,
   setSort,
@@ -78,6 +80,8 @@ const Filter = ({
                 </button>
                 {isRemovePopupOpen && (
                   <RemoveCategoryPopup
+                    todos={todos}
+                    setTodos={setTodos}
                     customCategories={customCategories}
                     setCustomCategories={setCustomCategories}
                     toggleRemovePopup={toggleRemovePopup}

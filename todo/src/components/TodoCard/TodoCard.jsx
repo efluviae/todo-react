@@ -26,15 +26,17 @@ const Todo = ({
         <RemoveButton todo={todo} removeTodo={removeTodo} />
       </div>
       <div className="todo-list__card__flags">
-        <p
-          className="todo-list__card__category"
-          data-color={getColorForCategory()}
-          onClick={() => {
-            setCategoryFilter(todo.category.toLowerCase());
-          }}
-        >
-          {todo.category}
-        </p>
+        {todo.category !== "Nenhuma" && (
+          <p
+            className="todo-list__card__category"
+            data-color={getColorForCategory()}
+            onClick={() => {
+              setCategoryFilter(todo.category.toLowerCase());
+            }}
+          >
+            {todo.category}
+          </p>
+        )}
         {todo.isUrgent && (
           <p
             className="todo-list__card__urgent"

@@ -89,6 +89,8 @@ function App() {
 
       <Filter
         filter={filter}
+        todos={todos}
+        setTodos={setTodos}
         setFilter={setFilter}
         sort={sort}
         setSort={setSort}

@@ -6,6 +6,8 @@ const RemoveCategoryPopup = ({
   customCategories,
   setCustomCategories,
   toggleRemovePopup,
+  todos,
+  setTodos,
 }) => {
   const [selectedCategory, setSelectedCategory] = useState("");
 
@@ -14,7 +16,12 @@ const RemoveCategoryPopup = ({
       (category) => category.name !== categoryName,
     );
 
+    const updatedTodos = todos.map((todo) =>
+      todo.category === categoryName ? { ...todo, category: "Nenhuma" } : todo,
+    );
+
     setCustomCategories(updatedCategories);
+    setTodos(updatedTodos);
   };
 
   const handleSubmit = (e) => {

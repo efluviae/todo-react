@@ -44,7 +44,8 @@ const AddPopup = ({ addTodo, toggleAddPopup, customCategories }) => {
               }}
               value={category}
             >
-              <option value="">Selecione uma categoria</option>
+              <option value="">Selecione uma categoria...</option>
+              <option value="Nenhuma">Sem Categoria</option>
               <option value="Trabalho">Trabalho</option>
               <option value="Pessoal">Pessoal</option>
               <option value="Estudos">Estudos</option>
