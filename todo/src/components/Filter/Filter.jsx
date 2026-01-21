@@ -74,13 +74,13 @@ const Filter = ({
                   className="filter__manage-category__add-btn btn"
                   onClick={toggleCategoryPopup}
                 >
-                  + Categoria
+                  Adicionar
                 </button>
                 <button
                   className="filter__manage-category__remove-btn btn"
                   onClick={toggleRemovePopup}
                 >
-                  - Categoria
+                  Remover
                 </button>
                 {isRemovePopupOpen && (
                   <RemoveCategoryPopup
@@ -104,18 +104,18 @@ const Filter = ({
               />
             </div>
             <div className="filter__sort">
-              <h3 className="filter__sort__label">Ordenar:</h3>
+              <h3 className="filter__sort__label">Ordenar por prazo:</h3>
               <button
                 className="filter__sort__btn btn"
                 onClick={() => setSort("Asc")}
               >
-                Asc
+                Perto
               </button>
               <button
                 className="filter__sort__btn btn"
                 onClick={() => setSort("Desc")}
               >
-                Desc
+                Longe
               </button>
             </div>
           </>

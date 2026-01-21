@@ -28,8 +28,6 @@
 .filter__manage-category__add-btn,
 .filter__manage-category__remove-btn {
   align-self: flex-start;
-  font-size: 0.9rem;
-  padding: 6px 10px;
 }
 
 .filter__sort__btn {

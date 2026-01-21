@@ -1,8 +1,17 @@
 import { useState } from "react";
 import "./AddPopup.css";
 import "../index.css";
+import DatePickerMinToday from "./DatePickerMinToday";
 
-const AddPopup = ({ addTodo, toggleAddPopup, customCategories }) => {
+const AddPopup = ({
+  addTodo,
+  toggleAddPopup,
+  customCategories,
+  selectedDate,
+  setSelectedDate,
+  minDate,
+  handleDateChange,
+}) => {
   const [text, setText] = useState("");
   const [category, setCategory] = useState("");
   const [isUrgent, setIsUrgent] = useState(false);
@@ -11,10 +20,11 @@ const AddPopup = ({ addTodo, toggleAddPopup, customCategories }) => {
     e.preventDefault();
     if (!text || !category) return;
 
-    addTodo(text, category, isUrgent);
+    addTodo(text, category, isUrgent, selectedDate);
     setText("");
     setCategory("");
     setIsUrgent(false);
+    setSelectedDate("");
     toggleAddPopup();
   };
 
@@ -55,6 +65,11 @@ const AddPopup = ({ addTodo, toggleAddPopup, customCategories }) => {
                 </option>
               ))}
             </select>
+            <DatePickerMinToday
+              selectedDate={selectedDate}
+              minDate={minDate}
+              handleDateChange={handleDateChange}
+            />
             <div className="add-popup__urgent">
               <label
                 htmlFor="add-popup__urgent"

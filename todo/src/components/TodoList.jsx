@@ -13,6 +13,7 @@ const TodoList = ({
   urgentFilter,
   setUrgentFilter,
   customCategories,
+  selectedDate,
 }) => {
   const filteredTodos = todos
     .filter((todo) =>
@@ -29,11 +30,11 @@ const TodoList = ({
         : todo.category.toLowerCase() === categoryFilter,
     )
     .filter((todo) => !urgentFilter || todo.isUrgent)
-    .sort((a, b) =>
-      sort === "Asc"
-        ? a.text.localeCompare(b.text)
-        : b.text.localeCompare(a.text),
-    );
+    .sort((a, b) => {
+      const dateA = a.selectedDate ? new Date(a.selectedDate) : new Date(0);
+      const dateB = b.selectedDate ? new Date(b.selectedDate) : new Date(0);
+      return sort === "Asc" ? dateA - dateB : dateB - dateA;
+    });
 
   return (
     <>
@@ -52,6 +53,7 @@ const TodoList = ({
               setCategoryFilter={setCategoryFilter}
               setUrgentFilter={setUrgentFilter}
               customCategories={customCategories}
+              selectedDate={selectedDate}
             />
           ))
         )}

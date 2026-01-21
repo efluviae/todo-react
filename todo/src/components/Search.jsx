@@ -2,7 +2,16 @@ import { useState } from "react";
 import AddPopup from "./AddPopup";
 import "./Search.css";
 
-const Search = ({ search, setSearch, addTodo, customCategories }) => {
+const Search = ({
+  search,
+  setSearch,
+  addTodo,
+  customCategories,
+  selectedDate,
+  setSelectedDate,
+  minDate,
+  handleDateChange,
+}) => {
   const [addPopup, setAddPopup] = useState(false);
 
   const toggleAddPopup = () => {
@@ -34,6 +43,10 @@ const Search = ({ search, setSearch, addTodo, customCategories }) => {
           toggleAddPopup={toggleAddPopup}
           addTodo={addTodo}
           customCategories={customCategories}
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+          minDate={minDate}
+          handleDateChange={handleDateChange}
         />
       )}
     </>

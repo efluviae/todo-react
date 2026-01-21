@@ -340,6 +340,7 @@ select {
   font-size: 1em;
   width: 100%;
   background-color: var(--card);
+  color: var(--font);
 }
 
 .input::placeholder {

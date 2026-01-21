@@ -23,6 +23,14 @@ function App() {
     return item || [];
   });
   const [isAddCategoryPopupOpen, setIsAddCategoryPopupOpen] = useState(false);
+  const [selectedDate, setSelectedDate] = useState("");
+
+  const today = new Date();
+  const [minDate] = today.toISOString().split("T");
+
+  const handleDateChange = (e) => {
+    setSelectedDate(e.target.value);
+  };
 
   /* set items to localStorage */
   useEffect(() => {
@@ -33,7 +41,7 @@ function App() {
     setItem("TODOS", todos);
   }, [todos]);
 
-  const addTodo = (text, category, isUrgent) => {
+  const addTodo = (text, category, isUrgent, selectedDate) => {
     const newTodos = [
       ...todos,
       {
@@ -42,6 +50,7 @@ function App() {
         category,
         isCompleted: false,
         isUrgent,
+        selectedDate,
       },
     ];
 
@@ -83,6 +92,10 @@ function App() {
         setSearch={setSearch}
         addTodo={addTodo}
         customCategories={customCategories}
+        selectedDate={selectedDate}
+        setSelectedDate={setSelectedDate}
+        minDate={minDate}
+        handleDateChange={handleDateChange}
       />
 
       <div className="divider"></div>
@@ -119,6 +132,7 @@ function App() {
         removeTodo={removeTodo}
         completeTodo={completeTodo}
         customCategories={customCategories}
+        selectedDate={selectedDate}
       />
       {isAddCategoryPopupOpen && (
         <AddCategoryPopup

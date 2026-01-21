@@ -25,28 +25,33 @@ const Todo = ({
         <p className="todo-list__card__text">{todo.text}</p>
         <RemoveButton todo={todo} removeTodo={removeTodo} />
       </div>
-      <div className="todo-list__card__flags">
-        {todo.category !== "Nenhuma" && (
-          <p
-            className="todo-list__card__category"
-            data-color={getColorForCategory()}
-            onClick={() => {
-              setCategoryFilter(todo.category.toLowerCase());
-            }}
-          >
-            {todo.category}
-          </p>
-        )}
-        {todo.isUrgent && (
-          <p
-            className="todo-list__card__urgent"
-            onClick={() => {
-              setUrgentFilter(todo.isUrgent);
-            }}
-          >
-            Urgente
-          </p>
-        )}
+      <div className="todo-list__card__sort">
+        <div className="todo-list__card__sort__flags">
+          {todo.category !== "Nenhuma" && (
+            <p
+              className="todo-list__card__category"
+              data-color={getColorForCategory()}
+              onClick={() => {
+                setCategoryFilter(todo.category.toLowerCase());
+              }}
+            >
+              {todo.category}
+            </p>
+          )}
+          {todo.isUrgent && (
+            <p
+              className="todo-list__card__urgent"
+              onClick={() => {
+                setUrgentFilter(todo.isUrgent);
+              }}
+            >
+              Urgente
+            </p>
+          )}
+        </div>
+        <div className="todo-list__card__sort__date">
+          <p>{new Date(todo.selectedDate).toLocaleDateString()}</p>
+        </div>
       </div>
     </div>
   );

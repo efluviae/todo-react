@@ -40,7 +40,12 @@
   overflow-y: auto;
 }
 
-.todo-list__card__flags {
+.todo-list__card__sort {
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-list__card__sort__flags {
   display: flex;
   align-items: center;
   gap: 10px;
