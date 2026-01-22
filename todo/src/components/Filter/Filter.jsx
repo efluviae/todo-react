@@ -54,46 +54,47 @@ const Filter = ({
             </div>
             <div className="filter__category">
               <h3>Categoria:</h3>
-              <select
-                className="filter__category__select"
-                value={categoryFilter}
-                onChange={(e) => setCategoryFilter(e.target.value)}
-              >
-                <option value="all">Todas</option>
-                <option value="Trabalho">Trabalho</option>
-                <option value="Estudos">Estudos</option>
-                <option value="Pessoal">Pessoal</option>
-                {customCategories.map((category) => (
-                  <option key={category.id} value={category.name}>
-                    {category.name}
-                  </option>
-                ))}
-              </select>
-              <div className="filter__manage-category">
-                <button
-                  className="filter__manage-category__add-btn btn"
-                  onClick={toggleCategoryPopup}
+              <div className="filter__category__content">
+                <select
+                  className="filter__category__select"
+                  value={categoryFilter}
+                  onChange={(e) => setCategoryFilter(e.target.value)}
                 >
-                  Adicionar
-                </button>
-                <button
-                  className="filter__manage-category__remove-btn btn"
-                  onClick={toggleRemovePopup}
-                >
-                  Remover
-                </button>
-                {isRemovePopupOpen && (
-                  <RemoveCategoryPopup
-                    todos={todos}
-                    setTodos={setTodos}
-                    customCategories={customCategories}
-                    setCustomCategories={setCustomCategories}
-                    toggleRemovePopup={toggleRemovePopup}
-                  />
-                )}
+                  <option value="all">Todas</option>
+                  <option value="Trabalho">Trabalho</option>
+                  <option value="Estudos">Estudos</option>
+                  <option value="Pessoal">Pessoal</option>
+                  {customCategories.map((category) => (
+                    <option key={category.id} value={category.name}>
+                      {category.name}
+                    </option>
+                  ))}
+                </select>
+                <div className="filter__manage-category">
+                  <button
+                    className="filter__manage-category__add-btn btn"
+                    onClick={toggleCategoryPopup}
+                  >
+                    Adicionar
+                  </button>
+                  <button
+                    className="filter__manage-category__remove-btn btn"
+                    onClick={toggleRemovePopup}
+                  >
+                    Remover
+                  </button>
+                  {isRemovePopupOpen && (
+                    <RemoveCategoryPopup
+                      todos={todos}
+                      setTodos={setTodos}
+                      customCategories={customCategories}
+                      setCustomCategories={setCustomCategories}
+                      toggleRemovePopup={toggleRemovePopup}
+                    />
+                  )}
+                </div>
               </div>
             </div>
-            <div className="filter__category"></div>
             <div className="filter__urgent">
               <h3>Urgente:</h3>
               <input
@@ -104,19 +105,21 @@ const Filter = ({
               />
             </div>
             <div className="filter__sort">
-              <h3 className="filter__sort__label">Ordenar por prazo:</h3>
-              <button
-                className="filter__sort__btn btn"
-                onClick={() => setSort("Asc")}
-              >
-                Perto
-              </button>
-              <button
-                className="filter__sort__btn btn"
-                onClick={() => setSort("Desc")}
-              >
-                Longe
-              </button>
+              <h3>Ordenar por prazo:</h3>
+              <div className="filter__sort__buttons">
+                <button
+                  className="filter__sort__btn btn"
+                  onClick={() => setSort("Asc")}
+                >
+                  Perto
+                </button>
+                <button
+                  className="filter__sort__btn btn"
+                  onClick={() => setSort("Desc")}
+                >
+                  Longe
+                </button>
+              </div>
             </div>
           </>
         )}

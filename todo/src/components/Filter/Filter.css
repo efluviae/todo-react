@@ -14,7 +14,7 @@
   flex-direction: column;
 }
 
-.filter__category {
+.filter__category__content {
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -30,6 +30,36 @@
   align-self: flex-start;
 }
 
-.filter__sort__btn {
-  margin-right: 10px;
+.filter__sort {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__sort__buttons {
+  display: flex;
+  gap: 8px;
+}
+
+/* Tablet and up styles 768px */
+
+@media (min-width: 768px) {
+  .filter__category__content {
+    flex-direction: row;
+  }
+
+  .filter__urgent {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .filter__sort {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .filter__sort__btn {
+    height: fit-content;
+  }
 }
