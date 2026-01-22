@@ -13,7 +13,8 @@ const TodoList = ({
   urgentFilter,
   setUrgentFilter,
   customCategories,
-  selectedDate,
+  editTodo,
+  minDate,
 }) => {
   const filteredTodos = todos
     .filter((todo) =>
@@ -53,7 +54,8 @@ const TodoList = ({
               setCategoryFilter={setCategoryFilter}
               setUrgentFilter={setUrgentFilter}
               customCategories={customCategories}
-              selectedDate={selectedDate}
+              editTodo={editTodo}
+              minDate={minDate}
             />
           ))
         )}

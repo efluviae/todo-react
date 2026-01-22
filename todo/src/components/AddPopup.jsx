@@ -32,12 +32,12 @@ const AddPopup = ({
     <>
       <div className="overlay" onClick={toggleAddPopup}></div>
       <div className="add-popup popup">
-        <div className="add-popup__header">
+        <div className="add-popup__header popup__header">
           <h2 className="add-popup__title">Adicionar tarefa</h2>
           <div className="close-icon" onClick={toggleAddPopup}></div>
         </div>
         <div className="add-popup__body">
-          <form className="add-popup__form" onSubmit={handleSubmit}>
+          <form className="add-popup__form popup__form" onSubmit={handleSubmit}>
             <input
               className="add-popup__input input"
               type="text"
@@ -70,10 +70,10 @@ const AddPopup = ({
               minDate={minDate}
               handleDateChange={handleDateChange}
             />
-            <div className="add-popup__urgent">
+            <div className="add-popup__urgent popup__urgent">
               <label
                 htmlFor="add-popup__urgent"
-                className="add-popup__urgent__label label"
+                className="add-popup__urgent__label popup__urgent__label label"
               >
                 <input
                   type="checkbox"
@@ -87,7 +87,7 @@ const AddPopup = ({
               </label>
               <p>Urgente</p>
             </div>
-            <button type="submit" className="add-popup__submit">
+            <button type="submit" className="add-popup__submit popup__submit">
               Criar Tarefa
             </button>
           </form>

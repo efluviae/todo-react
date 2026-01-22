@@ -3,7 +3,7 @@ const RemoveButton = ({ todo, removeTodo }) => {
     <div className="remove">
       <img
         onClick={() => removeTodo(todo.id)}
-        className="remove__trash-icon"
+        className="remove__trash-icon icon"
         src="/src/assets/trash.svg"
         alt="Remove Todo"
       />

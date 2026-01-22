@@ -2,16 +2,23 @@
   padding: 10px;
 }
 
-.remove__trash-icon {
+.icon {
   cursor: pointer;
   width: 16px;
   height: 16px;
-  filter: var(--trash-bg);
   transition: 200ms opacity ease-in-out;
 }
 
-.remove__trash-icon:hover {
+.icon:hover {
   opacity: 0.5;
+}
+
+.remove__trash-icon {
+  filter: var(--trash-bg);
+}
+
+.edit__pencil-icon {
+  filter: var(--pencil-bg);
 }
 
 .todo-list__card,

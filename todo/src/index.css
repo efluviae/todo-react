@@ -21,6 +21,8 @@
   --pink-label-font: #a55082;
   --trash-bg: invert(34%) sepia(37%) saturate(3739%) hue-rotate(320deg)
     brightness(96%) contrast(95%);
+  --pencil-bg: invert(56%) sepia(96%) saturate(317%) hue-rotate(18deg)
+    brightness(98%) contrast(93%);
 }
 
 [data-theme="pink"] {
@@ -46,6 +48,8 @@
   --pink-label-font: #a55082;
   --trash-bg: invert(34%) sepia(37%) saturate(3739%) hue-rotate(320deg)
     brightness(96%) contrast(95%);
+  --pencil-bg: invert(56%) sepia(96%) saturate(317%) hue-rotate(18deg)
+    brightness(98%) contrast(93%);
 }
 
 [data-theme="green"] {
@@ -71,6 +75,8 @@
   --pink-label-font: #a55082;
   --trash-bg: invert(34%) sepia(37%) saturate(3739%) hue-rotate(320deg)
     brightness(96%) contrast(95%);
+  --pencil-bg: invert(56%) sepia(96%) saturate(317%) hue-rotate(18deg)
+    brightness(98%) contrast(93%);
 }
 
 [data-theme="dark"] {
@@ -95,6 +101,8 @@
   --pink-label-bg: #ff79c6;
   --pink-label-font: #7c2b59;
   --trash-bg: invert(5%) sepia(4%) saturate(4421%) hue-rotate(188deg)
+    brightness(98%) contrast(92%);
+  --pencil-bg: invert(5%) sepia(4%) saturate(4421%) hue-rotate(188deg)
     brightness(98%) contrast(92%);
 }
 
@@ -130,6 +138,18 @@ select {
     background: var(--detail);
     margin: 20px 0;
     border-radius: 3px;
+  }
+
+  .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 2;
+    background: rgba(49, 49, 49, 0.8);
   }
 }
 
@@ -320,17 +340,47 @@ select {
   }
 }
 
-.popup {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 90%;
-  height: auto;
-  transform: translate(-50%, -50%);
-  background-color: var(--bg);
-  padding: 16px 20px 30px 20px;
-  border-radius: 8px;
-  z-index: 3;
+@layer popup {
+  .popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    height: auto;
+    transform: translate(-50%, -50%);
+    background-color: var(--bg);
+    padding: 16px 20px 30px 20px;
+    border-radius: 8px;
+    z-index: 3;
+  }
+
+  .popup__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .popup__form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .popup__urgent {
+    display: flex;
+    align-items: center;
+  }
+
+  .popup__urgent__label {
+    padding: 8px 0;
+    margin-right: 7px;
+  }
+
+  .popup__submit {
+    padding: 12px;
+    font-size: 1rem;
+  }
 }
 
 .input {
@@ -353,5 +403,9 @@ select {
   body {
     background: var(--desktop-bg);
     padding: 30px;
+  }
+
+  .popup {
+    max-width: 550px;
   }
 }

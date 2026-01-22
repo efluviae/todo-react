@@ -1,5 +1,6 @@
 import Actions from "./Actions.jsx";
 import CompleteButton from "./CompleteButton.jsx";
+import EditPopup from "./EditPopup.jsx";
 import RemoveButton from "./RemoveButton.jsx";
 import "./TodoCard.css";
 
@@ -10,6 +11,8 @@ const Todo = ({
   setCategoryFilter,
   setUrgentFilter,
   customCategories,
+  editTodo,
+  minDate,
 }) => {
   const getColorForCategory = () => {
     const customCategory = customCategories.find(
@@ -23,6 +26,12 @@ const Todo = ({
       <div className="todo-list__card__content">
         <CompleteButton todo={todo} completeTodo={completeTodo} />
         <p className="todo-list__card__text">{todo.text}</p>
+        <EditPopup
+          todo={todo}
+          editTodo={editTodo}
+          customCategories={customCategories}
+          minDate={minDate}
+        />
         <RemoveButton todo={todo} removeTodo={removeTodo} />
       </div>
       <div className="todo-list__card__sort">
@@ -50,7 +59,13 @@ const Todo = ({
           )}
         </div>
         <div className="todo-list__card__sort__date">
-          <p>{new Date(todo.selectedDate).toLocaleDateString()}</p>
+          <p>
+            {todo.selectedDate
+              ? new Date(todo.selectedDate + "T00:00:00").toLocaleDateString(
+                  "pt-BR",
+                )
+              : "-"}
+          </p>
         </div>
       </div>
     </div>

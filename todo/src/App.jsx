@@ -25,8 +25,17 @@ function App() {
   const [isAddCategoryPopupOpen, setIsAddCategoryPopupOpen] = useState(false);
   const [selectedDate, setSelectedDate] = useState("");
 
-  const today = new Date();
-  const [minDate] = today.toISOString().split("T");
+  const getTodayInBrasilia = () => {
+    const date = new Date();
+    const brasilia = new Date(
+      date.toLocaleString("en-US", { timeZone: "America/Sao_Paulo" }),
+    );
+    const year = brasilia.getFullYear();
+    const month = String(brasilia.getMonth() + 1).padStart(2, "0");
+    const day = String(brasilia.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+  };
+  const minDate = getTodayInBrasilia();
 
   const handleDateChange = (e) => {
     setSelectedDate(e.target.value);
@@ -63,6 +72,23 @@ function App() {
       todo.id !== id ? todo : null,
     );
     setTodos(filteredTodos);
+  };
+
+  const editTodo = (id, newText, newCat, newUrgent, newDate) => {
+    const editedTodos = todos.map((todo) => {
+      if (id === todo.id) {
+        return {
+          ...todo,
+          text: newText,
+          category: newCat,
+          isUrgent: newUrgent,
+          selectedDate: newDate,
+        };
+      }
+      return todo;
+    });
+
+    setTodos(editedTodos);
   };
 
   const completeTodo = (id) => {
@@ -132,7 +158,8 @@ function App() {
         removeTodo={removeTodo}
         completeTodo={completeTodo}
         customCategories={customCategories}
-        selectedDate={selectedDate}
+        editTodo={editTodo}
+        minDate={minDate}
       />
       {isAddCategoryPopupOpen && (
         <AddCategoryPopup

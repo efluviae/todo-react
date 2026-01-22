@@ -10,11 +10,3 @@
   gap: 12px;
   justify-content: center;
 }
-
-/* Tablet Styles 768px */
-
-@media (min-width: 768px) {
-  .themes-popup {
-    max-width: 550px;
-  }
-}
