@@ -28,7 +28,7 @@ const TodoList = ({
     .filter((todo) =>
       categoryFilter === "all"
         ? true
-        : todo.category.toLowerCase() === categoryFilter,
+        : todo.category.toLowerCase() === categoryFilter.toLowerCase(),
     )
     .filter((todo) => !urgentFilter || todo.isUrgent)
     .sort((a, b) => {
