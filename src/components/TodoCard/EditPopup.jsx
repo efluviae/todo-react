@@ -37,8 +37,8 @@ const EditPopup = ({ todo, editTodo, customCategories, minDate }) => {
         <img
           onClick={toggleEdit}
           className="edit__pencil-icon icon"
-          src="/src/assets/pencil.svg"
-          alt="Remove Todo"
+          src="./src/assets/pencil.svg"
+          alt="Edit Todo"
         />
       </div>
       {edit && (
