@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DatePickerMinToday from "../DatePickerMinToday";
+import pencilIcon from "../../assets/pencil.svg";
 import "./EditPopup.css";
 
 const EditPopup = ({ todo, editTodo, customCategories, minDate }) => {
@@ -37,7 +38,7 @@ const EditPopup = ({ todo, editTodo, customCategories, minDate }) => {
         <img
           onClick={toggleEdit}
           className="edit__pencil-icon icon"
-          src="./src/assets/pencil.svg"
+          src={pencilIcon}
           alt="Edit Todo"
         />
       </div>
