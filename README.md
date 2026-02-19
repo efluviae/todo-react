@@ -1,16 +1,23 @@
-# React + Vite
+# ✅ Todo List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An interactive to-do list built with React. Features different themes, custom category creation and more!
 
-Currently, two official plugins are available:
+## ✨ Technologies
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* `React 19`
+* `Javascript`
+* `CSS`
+* `Vite 7`
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **Adding tasks** - By clicking the "+" icon, you can add a task and customize its name, category and deadline, as well as if it is urgent.
+* **Completing tasks** - By clicking the checkbox, a task is marked as completed and is greyed out.
+* **Editing tasks** - You can change all of the task's information by clicking the pencil icon.
+* **Adding custom categories** - Inside the filter section, by clicking "Adicionar" you can add a custom category as well as delete one.
+* **Different filtering options** - At the top, you can filter by text, and inside the Filter section, you can filter by status, category, date and urgent.
+* **Changing themes** - By click the "Tema" button, you can select between 4 themes.
 
-## Expanding the ESLint configuration
+## 🧠 The Process
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+I wanted to take a basic React first project and add various features that made it feel more complete. I started by making it look more polished, adding various themes and cute design elements, straying from the beginner React app look. I gathered feedback on what people thought was useful in a to-do app, leading to adding the editing tasks and the sorting by date features. The app is sorted in different reusable components, all using the BEM nomenclature system, as well as the mobile-first approach, making it responsive. I learned a lot building this project and I only hope to learn even more!
